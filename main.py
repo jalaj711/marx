@@ -7,7 +7,7 @@ from pymongo import MongoClient
 client = MongoClient("localhost", 27017)
 db = client['marx']
 notes = db['notes']
-app = flask.Flask(__name__)
+app = flask.Flask(__name__, static_folder="./build", static_url_path="/web")
 
 def _convert_obj_id(lst):
     for i in range(len(lst)):
@@ -42,6 +42,10 @@ def delete_note():
         "_id": ObjectId(data['id'])
     })
     return json.dumps(_convert_obj_id(list(notes.find())))
+
+@app.route("/")
+def index():
+    return flask.send_file("./build/index.html")
 
 if __name__ == "__main__":
     app.run()
