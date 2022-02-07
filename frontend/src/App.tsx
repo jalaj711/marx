@@ -31,7 +31,14 @@ const NotesCard = (props: {
       }),
     }}
   >
-    <Card style={{ borderRadius: "16px" }} elevation={0}>
+    <Card
+      style={{
+        borderRadius: "16px",
+        backgroundImage:
+          "linear-gradient(rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09))",
+      }}
+      elevation={0}
+    >
       <CardContent>
         <span style={{ display: "flex" }}>
           <Typography gutterBottom variant="h5" component="div">
@@ -65,11 +72,11 @@ class App extends React.Component {
     this.deleteNote = this.deleteNote.bind(this);
     this.createNote = this.createNote.bind(this);
   }
-  deleteNote(id: string){
+  deleteNote(id: string) {
     fetch("/api/delete_note", {
       method: "POST",
       body: JSON.stringify({
-        id: id
+        id: id,
       }),
     })
       .then((res) => res.json())
