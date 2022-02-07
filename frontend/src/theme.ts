@@ -4,10 +4,10 @@ const theme = createTheme({
     palette: {
         mode: "dark",
         primary: {
-            main: colors.blue["500"],
+            main: colors.purple["500"],
         },
         secondary: {
-            main: colors.lightGreen["500"]
+            main: colors.orange["500"]
         },
         /*text: {
             primary: "#fff",

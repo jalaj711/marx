@@ -31,6 +31,37 @@
       rel="stylesheet"
     />
     <title>Marx</title>
+    <style>
+      body {
+        overflow-x: hidden;
+      }
+      body::before, body::after {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: -2;
+      }
+      body::before {
+        width: 50vh;
+        height: 50vh;
+        background: linear-gradient(-90deg, purple, transparent);
+        top: 50%;
+        left: 0;
+        transform: translateX(-50%);
+        border-radius: 50%;
+        box-shadow: 0 0 5px purple, 0 0 15px purple , 0 0 100px purple;
+      }
+      body::after {
+        width: 60vh;
+        height: 60vh;
+        background: linear-gradient(120deg, orange, transparent);
+        top: 30%;
+        right: 0;
+        transform: translateX(30%);
+        border-radius: 50%;
+        box-shadow: 0 0 5px orange, 0 0 15px orange , 0 0 100px orange;
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
